@@ -32,11 +32,9 @@ class App extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (
-      (nextProps.testStore.sidebarComponent[0] ===
+      nextProps.testStore.sidebarComponent[0] ===
         this.props.testStore.sidebarComponent[0] &&
-        nextProps.testStore.IsSidebar[0] ===
-          this.props.testStore.IsSidebar[0]) ||
-      nextProps.testStore.sidebarComponent[0] !== undefined
+      nextProps.testStore.IsSidebar[0] === this.props.testStore.IsSidebar[0]
     ) {
       this.onSetSidebarOpen(false);
     } else {
