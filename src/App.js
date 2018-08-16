@@ -121,8 +121,8 @@ class App extends Component {
           }}
         >
           <Navbar />
-          <Redirect from="*" to="/" />
-          <Route exact path="/" component={this.Index} />
+          <Redirect from="*" to="/ValuteRate" />
+          <Route exact path="/ValuteRate" component={this.Index} />
           <Route
             path="/personal"
             component={PersonalRouting}

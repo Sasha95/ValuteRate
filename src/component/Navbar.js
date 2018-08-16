@@ -165,7 +165,7 @@ class Navbar extends Component {
           >
             <Link
               className="navbar-brand "
-              to="/"
+              to="/ValuteRate"
               className="col log"
               style={{
                 paddingLeft: "103px",
