@@ -22,7 +22,7 @@ export default class ValuteCorridor extends Component {
   render() {
     return (
       <div className="grid-video">
-        <div className="row align-items-center" style={{ margin: "0px" }}>
+        <div className="row align-items-center m-0">
           <div className="col-md-auto pl-0">
             <div className="corridor pad head-text">Валютный коридор</div>
             <div className="finin pad head-text">

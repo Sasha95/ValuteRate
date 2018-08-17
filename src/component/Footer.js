@@ -48,25 +48,46 @@ const Foot = styled.div`
 //#endregion
 
 class Footer extends Component {
+  state = {
+    windowWidth: false
+  };
+  handleResize = () => {
+    this.setState({
+      windowWidth: window.innerWidth <= 638 ? true : false
+    });
+  };
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
   render() {
     return (
       <div className="container bac">
-        <div className="row m-0 " style={{ paddingTop: "64px" }}>
-          <div className="col d-flex align-items-center">
+        <div
+          className="row justify-content-md-start m-0 "
+          style={{ paddingTop: "64px" }}
+        >
+          <div className="col-md d-flex align-items-center">
             <img src={logo} alt="logo" />
           </div>
           <div
-            className="d-flex align-items-center"
+            className="d-flex align-items-center col-md py-3 justify-content-start"
             style={{ paddingRight: "20px" }}
           >
             <img src={envelope} alt="envelope" />
             <Span>info@corridor.com </Span>
           </div>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center col-md">
             <img src={phone} alt="phone" />
             <Span>+7 499 586-10-25 </Span>
           </div>
-          <span className="pl-5">
+          <span className="col-auto  pr-0">
             <span className="telegram">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +145,7 @@ class Footer extends Component {
             Контакты
           </Link>
         </div>
-        <div className="row">
+        <div className="row pb-5">
           <div className="col">
             <Cook>
               ИП «Коридор» использует файлы «cookie», с целью персонализации
@@ -135,26 +156,38 @@ class Footer extends Component {
             </Cook>
           </div>
         </div>
-        <div className="row" style={{ paddingTop: "40px" }}>
-          <div className="col">
+        {this.state.windowWidth ? (
+          <div className="col justify-content-start px-0 col-xl-offset-4">
             <Foot>©2018 ИП «Коридор»</Foot>
           </div>
-          <div className="col-md-auto">
+        ) : (
+          ""
+        )}
+
+        <div className="row justify-content-end px-0">
+          {this.state.windowWidth ? (
+            ""
+          ) : (
+            <div className="col justify-content-start pr-0 col-xl-offset-4">
+              <Foot>©2018 ИП «Коридор»</Foot>
+            </div>
+          )}
+          <div className="col-auto mb-2 justify-content-end">
             <img src={visa} alt="VISA" />
           </div>
-          <div className="col-md-auto">
+          <div className="col-auto mb-2 justify-content-end">
             <img src={paypal} alt="paypal" />
           </div>
-          <div className="col-md-auto">
+          <div className="col-auto mb-2 justify-content-end">
             <img src={master} alt="paypal" />
           </div>
-          <div className="col-md-auto">
+          <div className="col-auto mb-2 justify-content-end">
             <img src={yandex} alt="yandex-money" />
           </div>
-          <div className="col-md-auto">
+          <div className="col-auto mb-2 justify-content-end">
             <img src={webmoney} alt="webmoney" />
           </div>
-          <div className="col-md-auto">
+          <div className="col-auto justify-content-end">
             <img src={american} alt="american-express" />
           </div>
         </div>

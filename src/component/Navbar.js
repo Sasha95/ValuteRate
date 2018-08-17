@@ -95,6 +95,7 @@ class Navbar extends Component {
                 <ModalScore>
                   {data["valute"]} {data["score"]}
                 </ModalScore>
+
                 {this.links.map((link, key) => (
                   <div key={key} className="modalText">
                     <Link
@@ -165,7 +166,7 @@ class Navbar extends Component {
           >
             <Link
               className="navbar-brand "
-              to="/ValuteRate"
+              to="/"
               className="col log"
               style={{
                 paddingLeft: "103px",

@@ -843,18 +843,18 @@ select.check-lang:hover {
 }
 
 .BtnEnter {
-  border: solid 1px rgba(255, 255, 255, 0.2);
-  background-color: rgb(12, 18, 143);
+  border: solid 1px rgba(255, 255, 255, 0.15);
+  background-color: rgb(12, 18, 143, 1);
   color: white;
   height: 40px;
   width: 80px;
   margin-top: 20px;
   margin-bottom: 20px;
   cursor: pointer;
-  border: none;
 }
 .BtnEnter:hover {
   background-color: rgba(48, 53, 159);
+  border: none;
 }
 .BtnEnter:active {
   box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.75);
@@ -897,7 +897,7 @@ select.check-lang:hover {
 }
 
 .text-title {
-  font-size: 4vw;
+  font-size: 46px;
   color: #ffffff;
   position: relative;
   z-index: 12;
@@ -905,7 +905,7 @@ select.check-lang:hover {
 }
 
 .head-content {
-  font-size: 2.3vw;
+  font-size: 24px;
   color: #ffffff;
   margin-top: 26px;
   font-weight: normal;
@@ -1031,6 +1031,12 @@ select.check-lang:hover {
   .accountTransfer {
     font-size: 2vw;
   }
+  .head-content {
+    font-size: 2.5vw;
+  }
+  .text-title {
+    font-size: 4.5vw;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1058,6 +1064,9 @@ select.check-lang:hover {
   }
   .sumTransfer {
     font-size: 2.5vw;
+  }
+  .tit {
+    font-size: 8vw;
   }
 }
 

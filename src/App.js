@@ -5,7 +5,7 @@ import PrevCorridor from "./component/PrevCorridor";
 import Information from "./component/Information";
 import CountersList from "./component/CountersList";
 import { connect } from "react-redux";
-import { Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import Navbar from "./component/Navbar.js";
 import PersonalRouting from "./component/personal/PersonalRouting";
 import Footer from "./component/Footer";
@@ -119,8 +119,9 @@ class App extends Component {
           }}
         >
           <Navbar />
-          <Redirect from="*" to="/ValuteRate" />
-          <Route exact path="/ValuteRate" component={this.Index} />
+          {/* <Redirect from="*" to="/" /> */}
+
+          <Route exact path="/" component={this.Index} />
           <Route
             path="/personal"
             component={PersonalRouting}

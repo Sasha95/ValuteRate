@@ -175,29 +175,27 @@ class InformationRouting extends Component {
             className="col info-pad"
             style={{ padding: "41px 35px 0px 55px" }}
           >
-            <BrowserRouter>
-              <div>
-                <Route
-                  path="/information/confidencial"
-                  component={Confidencial}
-                />
-                <Route path="/information/rules" component={Rules} />
-                <Route path="/information/security" component={Security} />
-                <Route path="/information/comission" component={Comission} />
-                <Route
-                  path="/information/valutecorridor"
-                  component={ValuteCorridorInfo}
-                />
-                <Route
-                  path="/information/valutearbitr"
-                  component={ValuteArbitr}
-                />
-                <Route
-                  path="/information/valutearbitrcor"
-                  component={ValuterbitrCor}
-                />
-              </div>
-            </BrowserRouter>
+            <div>
+              <Route
+                path="/information/confidencial"
+                component={Confidencial}
+              />
+              <Route path="/information/rules" component={Rules} />
+              <Route path="/information/security" component={Security} />
+              <Route path="/information/comission" component={Comission} />
+              <Route
+                path="/information/valutecorridor"
+                component={ValuteCorridorInfo}
+              />
+              <Route
+                path="/information/valutearbitr"
+                component={ValuteArbitr}
+              />
+              <Route
+                path="/information/valutearbitrcor"
+                component={ValuterbitrCor}
+              />
+            </div>
           </Right>
         </div>
       </div>
