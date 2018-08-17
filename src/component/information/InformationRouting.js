@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link, BrowserRouter, Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { Confidencial } from "./Confidencial";
 import { Rules } from "./Rules";
@@ -106,7 +106,7 @@ class InformationRouting extends Component {
     selectedValue: 0
   };
   CheckHendler = event => {
-    this.setState({ selectedValue: event.target.id });
+    this.setState({ selectedValue: Number(event.target.id) });
   };
 
   selectID = name => {
@@ -125,6 +125,8 @@ class InformationRouting extends Component {
         return 5;
       case "/information/valutearbitrcor":
         return 6;
+      default:
+        return;
     }
   };
 
@@ -161,7 +163,7 @@ class InformationRouting extends Component {
               <Text
                 style={{
                   textDecoration:
-                    this.state.selectedValue == key ? "underline" : ""
+                    this.state.selectedValue === key ? "underline" : ""
                 }}
                 id={key}
                 key={key}

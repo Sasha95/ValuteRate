@@ -51,5 +51,6 @@ export function dateAndName(month, begin = 1) {
     }
     dict[begin] = [day, weekend];
   }
+
   return dict;
 }

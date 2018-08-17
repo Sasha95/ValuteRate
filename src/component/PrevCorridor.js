@@ -41,13 +41,13 @@ class ValuteCorridor extends Component {
         this.DAY.getFullYear(),
         this.DAY.getMonth() + 1,
         this.DAY.getDay() + 1
-      ) == "вс"
+      ) === "вс"
         ? this.DAY.getDay() + 2
         : WeekDay(
             this.DAY.getFullYear(),
             this.DAY.getMonth() + 1,
             this.DAY.getDay() + 1
-          ) == "сб"
+          ) === "сб"
           ? this.DAY.getDay() + 3
           : this.DAY.getDay() + 1
   };
@@ -101,7 +101,6 @@ class ValuteCorridor extends Component {
       </div>
     );
 
-    // console.log(this.state.minidate);
     // console.log(this.state.calendarOpen);
     return (
       <div className="prevconteiner ">
@@ -115,7 +114,9 @@ class ValuteCorridor extends Component {
               <ClickOutside onClickOutside={this.hide}>
                 <a onClick={this.toggle}>
                   <div
-                    style={{ minWidth: "160px" }}
+                    style={{
+                      minWidth: "160px"
+                    }}
                     className={`dropdown ${open ? "show" : ""}`}
                   >
                     <button
@@ -134,9 +135,9 @@ class ValuteCorridor extends Component {
                       {this.state.windowWidth > 160
                         ? this.state.minidate
                         : this.months[this.state.currentMonthId]}
-                      <img src={arrow} className="col-auto" />
+                      <img src={arrow} alt="" className="col-auto" />
                     </button>
-                    {this.state.calendarOpen == true &&
+                    {this.state.calendarOpen === true &&
                     this.state.windowWidth > 160 ? (
                       <div className="row" style={{ paddingLeft: "15px" }}>
                         <Picker
@@ -147,7 +148,7 @@ class ValuteCorridor extends Component {
                     ) : null}
                   </div>
                 </a>
-                {open == true && this.state.windowWidth == 160 ? items : null}
+                {open === true && this.state.windowWidth === 160 ? items : null}
               </ClickOutside>
             </div>
           </div>
@@ -156,7 +157,8 @@ class ValuteCorridor extends Component {
               className={`col d-none d-lg-block text-center numberofweekSelect ${
                 days[key][1] ? "weekend" : ""
               }
-              ${key == this.state.selectDay ? "selectedItem" : ""}
+              
+              ${Number(key) === this.state.selectDay ? "selectedItem" : ""}
               `}
               id={key}
               key={key}
@@ -172,7 +174,7 @@ class ValuteCorridor extends Component {
           ))}
 
           <div
-            className="col numberofweekSelect d-none d-lg-block"
+            className="numberofweekSelect mr-5 d-none d-lg-block"
             style={{ opacity: 1 }}
           >
             <table>
@@ -229,34 +231,34 @@ class ValuteCorridor extends Component {
           this.DAY.getFullYear(),
           Number(event.currentTarget.id) + 1,
           1
-        ) == "вс"
+        ) === "вс"
           ? 2
           : WeekDay(
               this.DAY.getFullYear(),
               Number(event.currentTarget.id) + 1,
               1
-            ) == "сб"
+            ) === "сб"
             ? 3
             : 1
     });
   };
 
   SelectDayHandler = event => {
-    if (String(event.currentTarget.className).indexOf("weekend") == -1) {
-      this.setState({ selectDay: event.currentTarget.id });
+    if (String(event.currentTarget.className).indexOf("weekend") === -1) {
+      this.setState({ selectDay: Number(event.currentTarget.id) });
     }
   };
 
   arrowClick = event => {
     let { currentDaySpan } = this.state;
 
-    if (event.currentTarget.id == "left") {
+    if (event.currentTarget.id === "left") {
       currentDaySpan -= 9;
       this.setState({
         selectDay: this.state.currentDaySpan - 9 + this.checkday(currentDaySpan)
       });
     }
-    if (event.currentTarget.id == "right") {
+    if (event.currentTarget.id === "right") {
       currentDaySpan += 9;
       this.setState({
         selectDay: this.state.currentDaySpan + 9 + this.checkday(currentDaySpan)
@@ -265,7 +267,7 @@ class ValuteCorridor extends Component {
 
     if (currentDaySpan < 0) {
       currentDaySpan = 27;
-      if (this.state.currentMonthId == 0) {
+      if (this.state.currentMonthId === 0) {
       } else {
         this.setState({
           currentMonthId: this.state.currentMonthId - 1,
@@ -276,7 +278,7 @@ class ValuteCorridor extends Component {
       currentDaySpan = 1;
       this.setState({ currentDaySpan: 1 });
 
-      if (this.state.currentMonthId == 11) {
+      if (this.state.currentMonthId === 11) {
       } else {
         this.setState({
           currentMonthId: this.state.currentMonthId + 1,
@@ -285,7 +287,7 @@ class ValuteCorridor extends Component {
       }
     }
 
-    if (currentDaySpan == 0) {
+    if (currentDaySpan === 0) {
       this.setState({
         selectDay: 1 + this.checkday(1)
       });

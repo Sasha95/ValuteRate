@@ -78,6 +78,8 @@ class PersonalRouting extends Component {
         return 3;
       case "/personal/referal":
         return 4;
+      default:
+        return;
     }
   };
 
@@ -207,9 +209,9 @@ class PersonalRouting extends Component {
                         paddingTop: "20px"
                       }}
                     >
-                      {key == this.state.curentSelect ? (
+                      {key === this.state.curentSelect ? (
                         <div className="col-2 p-0">
-                          <img id={key} src={this.images[key]} />
+                          <img id={key} alt="" src={this.images[key]} />
                         </div>
                       ) : (
                         ""
@@ -238,7 +240,7 @@ class PersonalRouting extends Component {
 
   CheckHandle = event => {
     this.setState({
-      curentSelect: event.target.id
+      curentSelect: Number(event.target.id)
     });
   };
 }

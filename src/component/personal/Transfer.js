@@ -99,7 +99,7 @@ class Transfer extends Component {
   };
 
   render() {
-    return this.props.testStore.dataForDesktop[0] == undefined ? (
+    return this.props.testStore.dataForDesktop[0] === undefined ? (
       <div className="mx-auto align-self-center">
         <ReactLoading
           type="spinningBubbles"
@@ -116,8 +116,7 @@ class Transfer extends Component {
           border: "solid 1px #cbd0e8",
           backgroundColor: "#fff",
           maxWidth: "890px",
-          height: "593px",
-          margin: "35px"
+          height: "593px"
         }}
       >
         <div
@@ -301,11 +300,11 @@ export default connect(
     onChangeState: isClicked => {
       dispatch({
         type: "RESET"
-      }),
-        dispatch({
-          type: "CHANGE_STATE",
-          payload: isClicked
-        });
+      });
+      dispatch({
+        type: "CHANGE_STATE",
+        payload: isClicked
+      });
     },
     componentForSidebar: component => {
       dispatch({ type: "TRANSFER_COMPONENT", payload: component });

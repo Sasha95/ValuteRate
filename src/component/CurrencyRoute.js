@@ -9,7 +9,7 @@ export default class CurrencyRoute extends Component {
     select: -1
   };
   hoverOn = e => {
-    this.setState({ hover: true, select: e.target.id });
+    this.setState({ hover: true, select: Number(e.target.id) });
   };
   hoverOff = () => {
     this.setState({ hover: false, select: -1 });
@@ -37,7 +37,7 @@ export default class CurrencyRoute extends Component {
               onMouseLeave={this.hoverOff}
             >
               <hr className="vertical" />
-              {this.state.hover !== false && this.state.select == k["id"] ? (
+              {this.state.hover !== false && this.state.select === k["id"] ? (
                 <div className="percent">
                   {k["count"] > 0 ? "+" + k["count"] : k["count"]} {k["valute"]}
                 </div>

@@ -61,7 +61,8 @@ class Referal extends Component {
               </label>
             </CopyToClipboard>
             <div className="acquaint">
-              Перед началом работы ознакомтесь с общими<br />
+              Перед началом работы ознакомтесь с общими
+              <br />
               <u className="acquaint-rules">правилами реферальной программы</u>
             </div>
           </div>
@@ -105,7 +106,8 @@ class Referal extends Component {
             <Line className="blockWrap" />
             <div className="col blockWrap">
               <div className="friends">
-                Доход от друзей<br /> в ожидании
+                Доход от друзей
+                <br /> в ожидании
               </div>
               <div className="counIncFriend" style={{ marginTop: "11px" }}>
                 {refData["valute"]}
@@ -127,11 +129,11 @@ export default connect(
     onChangeState: isClicked => {
       dispatch({
         type: "RESET"
-      }),
-        dispatch({
-          type: "CHANGE_STATE",
-          payload: isClicked
-        });
+      });
+      dispatch({
+        type: "CHANGE_STATE",
+        payload: isClicked
+      });
     },
     componentForSidebar: component => {
       dispatch({ type: "TRANSFER_COMPONENT", payload: component });

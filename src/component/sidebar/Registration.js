@@ -93,11 +93,11 @@ export default connect(
     onChangeState: isClicked => {
       dispatch({
         type: "RESET"
-      }),
-        dispatch({
-          type: "CHANGE_STATE",
-          payload: isClicked
-        });
+      });
+      dispatch({
+        type: "CHANGE_STATE",
+        payload: isClicked
+      });
     },
     componentForSidebar: component => {
       dispatch({ type: "TRANSFER_COMPONENT", payload: component });

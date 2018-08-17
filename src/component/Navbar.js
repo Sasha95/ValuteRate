@@ -105,9 +105,9 @@ class Navbar extends Component {
                       className="linkDecoration row"
                       to={`/personal/` + link["name"]}
                     >
-                      {key == this.state.onHover ? (
+                      {key === this.state.onHover ? (
                         <div className="col-2 p-0">
-                          <img id={key} src={this.images[key]} />
+                          <img id={key} alt="" src={this.images[key]} />
                         </div>
                       ) : (
                         ""
@@ -165,9 +165,8 @@ class Navbar extends Component {
             style={{ width: "1366px", margin: "0px" }}
           >
             <Link
-              className="navbar-brand "
+              className="navbar-brand col log"
               to="/"
-              className="col log"
               style={{
                 paddingLeft: "103px",
                 paddingTop: "26px",
@@ -320,11 +319,11 @@ export default connect(
     onChangeState: isClicked => {
       dispatch({
         type: "RESET"
-      }),
-        dispatch({
-          type: "CHANGE_STATE",
-          payload: isClicked
-        });
+      });
+      dispatch({
+        type: "CHANGE_STATE",
+        payload: isClicked
+      });
     },
     componentForSidebar: component => {
       dispatch({ type: "TRANSFER_COMPONENT", payload: component });

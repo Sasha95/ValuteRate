@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Map from "pigeon-maps";
 import Overlay from "pigeon-overlay";
 import marker from "../static/imges/marker.svg";
-import styled from "../../node_modules/styled-components";
 import { connect } from "react-redux";
 
 class Contact extends Component {
@@ -96,11 +95,11 @@ export default connect(
     onChangeState: isClicked => {
       dispatch({
         type: "RESET"
-      }),
-        dispatch({
-          type: "CHANGE_STATE",
-          payload: isClicked
-        });
+      });
+      dispatch({
+        type: "CHANGE_STATE",
+        payload: isClicked
+      });
     },
     componentForSidebar: component => {
       dispatch({ type: "TRANSFER_COMPONENT", payload: component });

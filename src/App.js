@@ -19,7 +19,6 @@ import CopyLink from "./component/sidebar/CopyLink";
 import Contact from "./component/Contact";
 import SendMessage from "./component/sidebar/SendMessage";
 import InformationRouting from "./component/information/InformationRouting";
-import NotFound from "./component/NotFound";
 
 class App extends Component {
   state = {
@@ -43,7 +42,6 @@ class App extends Component {
   }
 
   componentRender = name => {
-    console.log(name);
     switch (name) {
       case "Registation":
         return <Registration />;
@@ -59,8 +57,6 @@ class App extends Component {
         return <CopyLink title="Ссылка скопирована" />;
       case "SendMessage":
         return <SendMessage title="Написать сообщение" />;
-      // case undefined:
-      //   return;
       default:
         return "Exit";
     }
